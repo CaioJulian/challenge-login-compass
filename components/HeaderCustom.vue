@@ -15,8 +15,8 @@ export default {}
 
   &__title {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 25px;
+    font-size: 1.5rem;
+    line-height: 1.563rem;
     letter-spacing: -0.08em;
     text-transform: uppercase;
   }

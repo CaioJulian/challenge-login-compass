@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import IndexPageError from '.'
 import HeaderCustom from '~/components/HeaderCustom.vue'
+import FooterCustom from '~/components/FooterCustom.vue'
 
 describe('IndexPageError - integration', () => {
   const mountIndexPageError = () => {
@@ -17,5 +18,6 @@ describe('IndexPageError - integration', () => {
   it('should mount the components', () => {
     const wrapper = mountIndexPageError()
     expect(wrapper.findComponent(HeaderCustom)).toBeDefined()
+    expect(wrapper.findComponent(FooterCustom)).toBeDefined()
   })
 })
