@@ -1,0 +1,24 @@
+<template>
+  <header class="header-custom">
+    <h1 class="header-custom__title">404 not found</h1>
+  </header>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss" scoped>
+.header-custom {
+  font-family: 'Inconsolata', monospace;
+  color: #333333;
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 25px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+  }
+}
+</style>
