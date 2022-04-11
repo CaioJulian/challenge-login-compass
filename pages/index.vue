@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <HeaderCustom />
-    <main>
+    <main class="page-error">
       <BannerCustom />
       <CardCustom />
     </main>
@@ -22,5 +22,22 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 1rem;
+  max-width: 100%;
+  .page-error {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 64rem;
+    margin: auto;
+    .page-error {
+      flex-direction: row;
+      height: 80vh;
+    }
+  }
 }
 </style>
