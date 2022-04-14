@@ -1,14 +1,16 @@
 <template>
   <section class="home">
     <HeaderHome />
+    <FigureHome />
   </section>
 </template>
 
 <script>
 import HeaderHome from '~/components/home/HeaderHome.vue'
+import FigureHome from '~/components/home/FigureHome.vue'
 export default {
   name: 'IndexPage',
-  components: { HeaderHome },
+  components: { HeaderHome, FigureHome },
 }
 </script>
 <style lang="scss" scoped>
