@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Mark Pro', sans-serif;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Mark Pro'), url('./fonts/Mark-Pro.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mark Pro', sans-serif;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Mark Pro'), url('./fonts/Mark-Pro-Bold.ttf') format('truetype');
+}
