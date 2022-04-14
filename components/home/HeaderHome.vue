@@ -47,15 +47,15 @@ export default {
   &__location {
     margin: 0;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
   }
 
   &__temp {
     margin: 0;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 61px;
+    font-size: 3rem;
+    line-height: 3.813rem;
 
     &::before {
       content: url('/img/icons/cloudy.png');
