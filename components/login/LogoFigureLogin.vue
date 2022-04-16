@@ -1,5 +1,5 @@
 <template>
-  <figure class="figure">
+  <figure class="logo-figure-login">
     <img
       src="/img/logo-compass-white.png"
       alt="logo compass white"
@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: 'FigureLogin',
+  name: 'LogoFigureLogin',
 }
 </script>
 
 <style lang="scss" scoped>
-.figure {
+.logo-figure-login {
   display: flex;
   justify-content: center;
 }

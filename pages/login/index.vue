@@ -1,6 +1,6 @@
 <template>
   <section class="login">
-    <FigureLogin />
+    <LogoFigureLogin />
 
     <section class="login__card">
       <article class="login__header">
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import FigureLogin from '~/components/login/FigureLogin.vue'
+import LogoFigureLogin from '~/components/login/LogoFigureLogin.vue'
 import FormLogin from '~/components/login/FormLogin.vue'
 export default {
   name: 'IndexLoginPage',
-  components: { FigureLogin, FormLogin },
+  components: { LogoFigureLogin, FormLogin },
   props: {
     title: {
       type: String,

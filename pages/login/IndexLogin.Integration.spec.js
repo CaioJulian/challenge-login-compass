@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import IndexLogin from '.'
-import FigureLogin from '~/components/login/FigureLogin.vue'
+import LogoFigureLogin from '~/components/login/LogoFigureLogin.vue'
 import FormLogin from '~/components/login/FormLogin.vue'
 
 describe('IndexLogin - integration', () => {
@@ -17,7 +17,7 @@ describe('IndexLogin - integration', () => {
 
   it('should mount the components', () => {
     const wrapper = mountIndexLogin()
-    expect(wrapper.findComponent(FigureLogin)).toBeDefined()
+    expect(wrapper.findComponent(LogoFigureLogin)).toBeDefined()
     expect(wrapper.findComponent(FormLogin)).toBeDefined()
   })
 })
