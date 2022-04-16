@@ -1,17 +1,18 @@
 <template>
   <figure class="logo-figure-login">
-    <img
-      src="/img/logo-compass-white.png"
-      alt="logo compass white"
-      width="306"
-      height="69"
-    />
+    <img :src="src" alt="logo compass white" width="306" height="69" />
   </figure>
 </template>
 
 <script>
 export default {
   name: 'LogoFigureLogin',
+  props: {
+    src: {
+      type: String,
+      default: '/img/logo-compass-white.png',
+    },
+  },
 }
 </script>
 
@@ -19,5 +20,13 @@ export default {
 .logo-figure-login {
   display: flex;
   justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .logo-figure-login {
+    justify-content: flex-end;
+    padding-right: 15rem;
+  }
 }
 </style>

@@ -35,6 +35,8 @@ export default {
   max-width: 379px;
   margin: auto;
   padding: 1rem 2rem;
+  z-index: 1;
+  position: relative;
 
   &__header {
     max-width: 301px;
@@ -52,6 +54,11 @@ export default {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .card-login {
+    margin: 0;
   }
 }
 </style>

@@ -2,15 +2,17 @@
   <section class="login">
     <LogoFigureLogin />
     <CardLogin />
+    <BannerFigureLogin />
   </section>
 </template>
 
 <script>
 import LogoFigureLogin from '~/components/login/LogoFigureLogin.vue'
 import CardLogin from '~/components/login/CardLogin.vue'
+import BannerFigureLogin from '~/components/login/BannerFigureLogin.vue'
 export default {
   name: 'IndexLoginPage',
-  components: { LogoFigureLogin, CardLogin },
+  components: { LogoFigureLogin, CardLogin, BannerFigureLogin },
 }
 </script>
 
