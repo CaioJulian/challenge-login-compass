@@ -1,12 +1,7 @@
 <template>
   <header class="header-home">
     <figure class="header-home__figure">
-      <img
-        src="/img/logo-compass.png"
-        alt="logo compass"
-        width="150"
-        height="43"
-      />
+      <img :src="src" alt="logo compass" width="150" height="43" />
     </figure>
     <section class="header-home__card">
       <p class="header-home__location">{{ location }}</p>
@@ -17,6 +12,12 @@
 
 <script>
 export default {
+  props: {
+    src: {
+      type: String,
+      default: '/img/logo-compass.png',
+    },
+  },
   data() {
     return {
       location: 'Passo Fundo - RS',
