@@ -1,11 +1,18 @@
 <template>
   <figure class="figure-home">
-    <img src="/img/ball-logo-compass.png" alt="ball logo compass" width="280" />
+    <img :src="src" alt="ball logo compass" width="280" />
   </figure>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    src: {
+      type: String,
+      default: '/img/ball-logo-compass.png',
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
