@@ -22,6 +22,7 @@ export default {
   box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
   max-width: 100%;
   min-height: 100vh;
+  position: relative;
 
   padding: 1rem;
   color: #e0e0e0;
