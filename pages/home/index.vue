@@ -3,7 +3,7 @@
     <HeaderHome />
     <main>
       <section class="home__section-left">
-        <FigureHome />
+        <BannerHome />
       </section>
       <section class="home__section-right">
         <CardHome />
@@ -15,12 +15,12 @@
 
 <script>
 import HeaderHome from '~/components/home/HeaderHome.vue'
-import FigureHome from '~/components/home/FigureHome.vue'
+import BannerHome from '~/components/home/BannerHome.vue'
 import FooterHome from '~/components/home/FooterHome.vue'
 import CardHome from '~/components/home/CardHome.vue'
 export default {
   name: 'IndexHomePage',
-  components: { HeaderHome, FigureHome, FooterHome, CardHome },
+  components: { HeaderHome, BannerHome, FooterHome, CardHome },
 }
 </script>
 <style lang="scss" scoped>
