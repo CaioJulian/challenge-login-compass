@@ -1,8 +1,9 @@
 import { mount } from '@vue/test-utils'
 import IndexHome from '.'
 import HeaderHome from '~/components/home/HeaderHome.vue'
-import FigureHome from '~/components/home/FigureHome.vue'
+import BannerHome from '~/components/home/BannerHome.vue'
 import FooterHome from '~/components/home/FooterHome.vue'
+import CardHome from '~/components/home/CardHome.vue'
 
 describe('IndexHome - integration', () => {
   const mountIndexHome = () => {
@@ -19,7 +20,8 @@ describe('IndexHome - integration', () => {
   it('should mount the components', () => {
     const wrapper = mountIndexHome()
     expect(wrapper.findComponent(HeaderHome)).toBeDefined()
-    expect(wrapper.findComponent(FigureHome)).toBeDefined()
+    expect(wrapper.findComponent(BannerHome)).toBeDefined()
     expect(wrapper.findComponent(FooterHome)).toBeDefined()
+    expect(wrapper.findComponent(CardHome)).toBeDefined()
   })
 })
