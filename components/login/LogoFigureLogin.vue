@@ -20,13 +20,10 @@ export default {
 .logo-figure-login {
   display: flex;
   justify-content: center;
-  z-index: 1;
-  position: relative;
 }
 @media (min-width: 1024px) {
   .logo-figure-login {
-    justify-content: flex-end;
-    padding-right: 15rem;
+    display: none;
   }
 }
 </style>

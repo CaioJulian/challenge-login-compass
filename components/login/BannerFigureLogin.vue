@@ -1,52 +1,40 @@
 <template>
-  <figure class="banner-figure-login">
-    <img
-      class="banner-figure-login__img"
-      :src="src"
-      alt="banner notebook"
-      width="960"
-      height="1080"
-    />
-  </figure>
+  <section :style="`background-image: url(${bannerSrc})`" class="banner-login">
+    <figure class="banner-login__logo">
+      <img :src="logoSrc" alt="logo compass white" width="306" height="69" />
+    </figure>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'BannerFigureLogin',
   props: {
-    src: {
+    bannerSrc: {
       type: String,
       default: '/img/banner-notebook.png',
+    },
+    logoSrc: {
+      type: String,
+      default: '/img/logo-compass-white.png',
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.banner-figure-login {
+.banner-login {
   display: none;
-  margin: 0;
 }
 @media (min-width: 1024px) {
-  .banner-figure-login {
+  .banner-login {
     display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-
-    &__img {
-      max-width: 400px;
-      height: auto;
-      object-fit: cover;
-      object-position: left;
-    }
-  }
-}
-@media (min-width: 1280px) {
-  .banner-figure-login__img {
-    max-width: 100%;
+    justify-content: center;
+    width: 100%;
+    height: 1080px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 </style>
