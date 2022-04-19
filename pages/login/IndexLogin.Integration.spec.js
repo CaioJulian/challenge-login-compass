@@ -3,6 +3,7 @@ import IndexLogin from '.'
 import LogoFigureLogin from '~/components/login/LogoFigureLogin.vue'
 import CardLogin from '~/components/login/CardLogin.vue'
 import BannerFigureLogin from '~/components/login/BannerFigureLogin.vue'
+import FormLogin from '~/components/login/FormLogin.vue'
 
 describe('IndexLogin - integration', () => {
   const mountIndexLogin = () => {
@@ -21,5 +22,6 @@ describe('IndexLogin - integration', () => {
     expect(wrapper.findComponent(LogoFigureLogin)).toBeDefined()
     expect(wrapper.findComponent(CardLogin)).toBeDefined()
     expect(wrapper.findComponent(BannerFigureLogin)).toBeDefined()
+    expect(wrapper.findComponent(FormLogin)).toBeDefined()
   })
 })

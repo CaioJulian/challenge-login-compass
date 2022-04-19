@@ -6,14 +6,11 @@
         {{ description }}
       </p>
     </article>
-    <FormLogin />
   </section>
 </template>
 
 <script>
-import FormLogin from './FormLogin.vue'
 export default {
-  components: { FormLogin },
   props: {
     title: {
       type: String,
@@ -32,11 +29,7 @@ export default {
 .card-login {
   display: flex;
   flex-direction: column;
-  max-width: 379px;
-  margin: auto;
-  padding: 1rem 2rem;
-  z-index: 1;
-  position: relative;
+  align-items: center;
 
   &__header {
     max-width: 301px;
@@ -58,7 +51,7 @@ export default {
 }
 @media (min-width: 1024px) {
   .card-login {
-    margin: 0;
+    margin-top: 7rem;
   }
 }
 </style>

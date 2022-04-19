@@ -1,8 +1,13 @@
 <template>
   <section class="login">
-    <LogoFigureLogin />
-    <CardLogin />
-    <BannerFigureLogin />
+    <section class="login__card-left">
+      <LogoFigureLogin />
+      <CardLogin />
+      <FormLogin />
+    </section>
+    <section class="login__card-right">
+      <BannerFigureLogin />
+    </section>
   </section>
 </template>
 
@@ -10,9 +15,10 @@
 import LogoFigureLogin from '~/components/login/LogoFigureLogin.vue'
 import CardLogin from '~/components/login/CardLogin.vue'
 import BannerFigureLogin from '~/components/login/BannerFigureLogin.vue'
+import FormLogin from '~/components/login/FormLogin.vue'
 export default {
   name: 'IndexLoginPage',
-  components: { LogoFigureLogin, CardLogin, BannerFigureLogin },
+  components: { LogoFigureLogin, CardLogin, BannerFigureLogin, FormLogin },
 }
 </script>
 
@@ -24,8 +30,23 @@ export default {
   min-height: 100vh;
   position: relative;
 
-  padding: 1rem;
   color: #e0e0e0;
   font-family: 'Mark Pro', sans-serif;
+
+  display: flex;
+  justify-content: space-around;
+
+  &__card-left {
+    width: 100%;
+  }
+  &__card-right {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .login__card-right {
+    display: block;
+    width: 100%;
+  }
 }
 </style>
