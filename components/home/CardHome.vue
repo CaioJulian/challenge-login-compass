@@ -39,6 +39,7 @@ export default {}
     text-align: right;
     padding-right: 4rem;
     height: 500px;
+    text-shadow: 1px 1px #f0f0f0;
 
     &__title {
       margin: 0;
