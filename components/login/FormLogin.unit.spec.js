@@ -36,11 +36,11 @@ describe('FormLogin - unit', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  it('should handle submit login', async () => {
+  it('should handleSubmit login success', async () => {
     const wrapper = mountFormLogin()
     const form = {
-      user: 'alberto.helbig',
-      password: 346792129,
+      user: 'caio.barros',
+      password: 12345678,
     }
 
     const userInput = wrapper.find('[data-testid="user-input"]')
@@ -57,5 +57,43 @@ describe('FormLogin - unit', () => {
     expect(wrapper.vm.form).toStrictEqual(form)
     expect(userLogin.login).toEqual(form.user)
     expect(userLogin.password).toEqual(form.password)
+  })
+
+  it('should handleValidation return true login submit', async () => {
+    const wrapper = mountFormLogin()
+    const form = {
+      user: 'Caio.barros',
+      password: 12345678,
+    }
+
+    const userInput = wrapper.find('[data-testid="user-input"]')
+    await userInput.setValue(form.user)
+
+    const passwordInput = wrapper.find('[data-testid="password-input"]')
+    await passwordInput.setValue(form.password)
+
+    const button = wrapper.find('[data-testid="login-button"]')
+    await button.trigger('submit')
+
+    expect(wrapper.vm.handleValidation()).toBeTruthy()
+  })
+
+  it('should handleValidation return false login submit', async () => {
+    const wrapper = mountFormLogin()
+    const form = {
+      user: 'Caio-barros',
+      password: 87645,
+    }
+
+    const userInput = wrapper.find('[data-testid="user-input"]')
+    await userInput.setValue(form.user)
+
+    const passwordInput = wrapper.find('[data-testid="password-input"]')
+    await passwordInput.setValue(form.password)
+
+    const button = wrapper.find('[data-testid="login-button"]')
+    await button.trigger('submit')
+
+    expect(wrapper.vm.handleValidation()).not.toBeTruthy()
   })
 })

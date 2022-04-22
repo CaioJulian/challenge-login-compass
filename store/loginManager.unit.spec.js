@@ -16,9 +16,9 @@ describe('loginManager - unit', () => {
     })
 
     userLogin = {
-      login: 'alberto.helbig',
-      password: 346792129,
-      local: '-31.396646856036423, -52.67586252253379',
+      login: 'caio.barros',
+      password: 12345678,
+      local: '-28.9712132207349, -52.00882991155071',
     }
   })
 
@@ -29,8 +29,8 @@ describe('loginManager - unit', () => {
 
   it('should return fetchLogin form user', () => {
     const form = {
-      user: 'alberto.helbig',
-      password: 346792129,
+      user: 'caio.barros',
+      password: 12345678,
     }
     store.dispatch('fetchLogin', form)
     expect(store.state.userLogin).toEqual(userLogin)
@@ -38,7 +38,7 @@ describe('loginManager - unit', () => {
 
   it('should not return fetchLogin form user', () => {
     const form = {
-      user: 'alberto.helbig',
+      user: 'caio.barros',
       password: 987654321,
     }
     store.dispatch('fetchLogin', form)

@@ -4,9 +4,10 @@
       <h2 class="form__title">Login</h2>
       <form class="form__group" @submit.prevent="handleSubmit">
         <input
-          v-model="form.user"
+          v-model.trim="form.user"
           data-testid="user-input"
           class="form__input form__input--icon-user"
+          :class="{ 'form__input--error': !isValid }"
           type="text"
           placeholder="Usuário"
           required
@@ -15,11 +16,21 @@
           v-model.number="form.password"
           data-testid="password-input"
           class="form__input form__input--icon-lock"
+          :class="{ 'form__input--error': !isValid }"
           type="password"
           placeholder="Senha"
+          inputmode="numeric"
           required
         />
-        <button data-testid="login-button" class="form__button" type="submit">
+        <p v-show="!isValid" class="form__message-error">
+          Ops, usuário ou senha inválidos. Tente novamente!
+        </p>
+        <button
+          data-testid="login-button"
+          class="form__button"
+          :class="{ 'form__button--small-margin': !isValid }"
+          type="submit"
+        >
           Continuar
         </button>
       </form>
@@ -38,9 +49,38 @@ export default {
       },
     }
   },
+  computed: {
+    isValid() {
+      return this.$store.state.loginManager.isValid
+    },
+  },
   methods: {
     handleSubmit() {
-      this.$store.dispatch('loginManager/fetchLogin', this.form)
+      const handleValid = this.handleValidation()
+
+      if (handleValid)
+        this.$store.dispatch('loginManager/fetchLogin', this.form)
+    },
+
+    handleValidation() {
+      // eslint-disable-next-line prefer-const
+      let { user, password } = this.form
+      user = user.toLowerCase()
+      this.form.user = user
+
+      const resultUser = /^[a-z.]+$/.test(user)
+
+      const passLength = password.toString().length
+
+      const resultNumberPassword = /^[0-9]+$/.test(password)
+
+      const resultLengthPassword = passLength >= 6 && passLength < 9
+
+      const result = resultUser && resultLengthPassword && resultNumberPassword
+
+      this.$store.commit('loginManager/setIsValid', result)
+
+      return result
     },
   },
 }
@@ -90,6 +130,19 @@ export default {
       background: url('/img/icons/lock.png') no-repeat 95%;
       background-size: 15px;
     }
+
+    &--error {
+      border: 1px solid #e9b425;
+    }
+  }
+
+  &__message-error {
+    margin: 0 1.5rem;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #e9b425;
   }
 
   &__button {
@@ -104,6 +157,11 @@ export default {
     font-size: 1.125rem;
     line-height: 1.438rem;
     color: #ffffff;
+    cursor: pointer;
+
+    &--small-margin {
+      margin-top: 2.5rem;
+    }
   }
 }
 </style>
