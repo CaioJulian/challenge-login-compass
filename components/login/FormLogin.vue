@@ -12,7 +12,7 @@
           required
         />
         <input
-          v-model="form.password"
+          v-model.number="form.password"
           data-testid="password-input"
           class="form__input form__input--icon-lock"
           type="password"
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      return false
+      this.$store.dispatch('loginManager/fetchLogin', this.form)
     },
   },
 }
