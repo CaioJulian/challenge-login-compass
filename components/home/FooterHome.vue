@@ -22,7 +22,14 @@
     </section>
     <section class="footer-home__group-button">
       <button class="footer-home__button-nav">Continuar Navegando</button>
-      <button class="footer-home__button-logout">Logout</button>
+      <button
+        data-testid="logout-button"
+        class="footer-home__button-logout"
+        title="Logout"
+        @click="logout()"
+      >
+        Logout
+      </button>
     </section>
   </footer>
 </template>
@@ -45,6 +52,12 @@ export default {
     unit() {
       const { number } = this
       return number > 1 ? 'seconds' : 'second'
+    },
+  },
+  methods: {
+    logout() {
+      this.$store.commit('loginManager/setLogin', {})
+      this.$router.push('/login')
     },
   },
 }
@@ -121,6 +134,7 @@ export default {
     line-height: 0.938rem;
     text-align: center;
     color: #ffffff;
+    cursor: pointer;
   }
 }
 
