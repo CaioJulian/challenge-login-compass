@@ -6,6 +6,10 @@ import * as managerLogin from '@/store/loginManager'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
+const $router = {
+  push: jest.fn(),
+}
+
 describe('FormLogin - unit', () => {
   let store, loginManager
 
@@ -26,6 +30,9 @@ describe('FormLogin - unit', () => {
     const wrapper = mount(FormLogin, {
       store,
       localVue,
+      mocks: {
+        $router,
+      },
     })
 
     return wrapper

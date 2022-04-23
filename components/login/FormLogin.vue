@@ -58,8 +58,10 @@ export default {
     handleSubmit() {
       const handleValid = this.handleValidation()
 
-      if (handleValid)
+      if (handleValid) {
         this.$store.dispatch('loginManager/fetchLogin', this.form)
+        this.redirectPageHome()
+      }
     },
 
     handleValidation() {
@@ -81,6 +83,11 @@ export default {
       this.$store.commit('loginManager/setIsValid', result)
 
       return result
+    },
+
+    redirectPageHome() {
+      const { userLogin } = this.$store.state.loginManager
+      if (userLogin.login) this.$router.push('/home')
     },
   },
 }
