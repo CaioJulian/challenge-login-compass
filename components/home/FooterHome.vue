@@ -21,7 +21,14 @@
       </article>
     </section>
     <section class="footer-home__group-button">
-      <button class="footer-home__button-nav">Continuar Navegando</button>
+      <button
+        data-testid="nav-button"
+        class="footer-home__button-nav"
+        title="Continuar Navegando"
+        @click="pauseCountdown()"
+      >
+        Continuar Navegando
+      </button>
       <button
         data-testid="logout-button"
         class="footer-home__button-logout"
@@ -45,6 +52,7 @@ export default {
   },
   data() {
     return {
+      countdown: true,
       number: 180,
     }
   },
@@ -54,10 +62,28 @@ export default {
       return number > 1 ? 'seconds' : 'second'
     },
   },
+  watch: {
+    number: {
+      handler(value) {
+        setTimeout(() => {
+          if (value > 0 && this.countdown) {
+            this.number--
+          } else if (value === 0) {
+            this.logout()
+          }
+        }, 1000)
+      },
+      immediate: true,
+    },
+  },
   methods: {
     logout() {
       this.$store.commit('loginManager/setLogin', {})
       this.$router.push('/login')
+    },
+
+    pauseCountdown() {
+      this.countdown = false
     },
   },
 }
@@ -121,6 +147,16 @@ export default {
     line-height: 0.938rem;
     text-align: center;
     color: #c13216;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0;
+      border: #f0f0f0;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 
   &__button-logout {
@@ -128,13 +164,22 @@ export default {
     border: none;
     max-width: 119px;
     width: 100%;
-    height: 55px;
+    height: 99px;
     font-weight: 700;
     font-size: 0.75rem;
     line-height: 0.938rem;
     text-align: center;
     color: #ffffff;
     cursor: pointer;
+
+    &:hover {
+      background-color: #101012;
+      border: #101012;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }
 
