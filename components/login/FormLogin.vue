@@ -29,6 +29,7 @@
           data-testid="login-button"
           class="form__button"
           :class="{ 'form__button--small-margin': !isValid }"
+          title="Continuar"
           type="submit"
         >
           Continuar
@@ -159,12 +160,22 @@ export default {
     height: 67px;
     background: linear-gradient(90deg, #ff2d04 0%, #c13216 100%);
     box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
+    border: none;
     border-radius: 50px;
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.438rem;
     color: #ffffff;
     cursor: pointer;
+
+    &:hover {
+      background: #c13216;
+      border: #c13216;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
 
     &--small-margin {
       margin-top: 2.5rem;

@@ -16,9 +16,11 @@ import LogoFigureLogin from '~/components/login/LogoFigureLogin.vue'
 import CardLogin from '~/components/login/CardLogin.vue'
 import BannerFigureLogin from '~/components/login/BannerFigureLogin.vue'
 import FormLogin from '~/components/login/FormLogin.vue'
+import CheckUserLoginLocalStorageMixins from '@/mixins/CheckUserLoginLocalStorage'
 export default {
   name: 'IndexLoginPage',
   components: { LogoFigureLogin, CardLogin, BannerFigureLogin, FormLogin },
+  mixins: [CheckUserLoginLocalStorageMixins],
 }
 </script>
 

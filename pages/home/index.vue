@@ -18,9 +18,11 @@ import HeaderHome from '~/components/home/HeaderHome.vue'
 import BannerHome from '~/components/home/BannerHome.vue'
 import FooterHome from '~/components/home/FooterHome.vue'
 import CardHome from '~/components/home/CardHome.vue'
+import CheckUserLoginLocalStorageMixins from '@/mixins/CheckUserLoginLocalStorage'
 export default {
   name: 'IndexHomePage',
   components: { HeaderHome, BannerHome, FooterHome, CardHome },
+  mixins: [CheckUserLoginLocalStorageMixins],
 }
 </script>
 <style lang="scss" scoped>

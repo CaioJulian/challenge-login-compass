@@ -10,6 +10,10 @@ import * as managerLogin from '@/store/loginManager'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
+const $router = {
+  push: jest.fn(),
+}
+
 describe('IndexLogin - integration', () => {
   let store, loginManager
 
@@ -29,6 +33,9 @@ describe('IndexLogin - integration', () => {
     const wrapper = mount(IndexLogin, {
       store,
       localVue,
+      mocks: {
+        $router,
+      },
     })
 
     return wrapper
